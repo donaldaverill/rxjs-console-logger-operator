@@ -1,6 +1,6 @@
 import { expect } from 'chai'
-import { TestScheduler } from 'rxjs'
-import { assert, sandbox, SinonSandbox, SinonStub } from 'sinon'
+import { TestScheduler } from 'rxjs/testing'
+import { assert, createSandbox, SinonSandbox, SinonStub } from 'sinon'
 
 import { debug } from '../src/console-logger'
 
@@ -17,7 +17,7 @@ describe('debug', () => {
   })
 
   beforeEach(() => {
-    sb = sandbox.create()
+    sb = createSandbox()
 
     errorStub = sb.stub(console, 'error')
     logStub = sb.stub(console, 'log')
@@ -33,7 +33,7 @@ describe('debug', () => {
 
     const message = 'Test Message'
 
-    scheduler.expectObservable(source.let(debug(message))).toBe(expected)
+    scheduler.expectObservable(source.pipe(debug(message))).toBe(expected)
     scheduler.flush()
     assert.notCalled(errorStub)
     assert.callCount(logStub, 3)

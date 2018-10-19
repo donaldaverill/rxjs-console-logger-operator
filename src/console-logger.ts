@@ -1,4 +1,4 @@
-import { Observable } from 'rxjs/Observable'
+import { Observable } from 'rxjs'
 
 export const consoleLogger = (message: string) =>
   <T>(source: Observable<T>) =>
