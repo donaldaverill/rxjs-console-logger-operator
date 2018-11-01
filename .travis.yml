@@ -1,0 +1,35 @@
+language: node_js
+
+node_js:
+  - "10"
+
+install:
+  - npm install
+
+script:
+  - npm test
+
+before_deploy:
+  - npm version patch
+
+deploy:
+  - provider: script
+    skip_cleanup: true
+    script: .travis/pu.sh
+    on:
+      branch: master
+    tags: false
+  - provider: npm
+    email: donaldaverill@gmail.com
+    api_key:
+      secure: n/W2Z4CyxZkuJPCjW3AXULfpOoj7GSPyDvtyA8Wr6sEfD71ev+8V/vAaqASKeARBv5Wa/dC+I5lSnRBROvmIsVusF52dQFUBHSQZp7EbEURxeO5maAnehmHLEPPsrAGcKXHUYGKOOxapQt7s8bhBl4i9/OolbeUtSjHYOF6vlQQylGz2RXkbYbHXUG9tJQ6MTpiadouuPydZC7zHRrUHTR7/jPqI1FOAtp6i1qKwOmIdVNoS0WS7mWSsJMacX+ueTVGG57k2xG7D/M58dIl/pEVP8fAATJDFHWzc1x/JleEnNdGFCVO/yAZ2RCFX52BjE6DEp4UmQ9Ii2MYF8P/rt5sviSILqeCt0SWmuaqpDSzA1YjHOMeJU9sse7cZAYsZg2fFzq7RwcXdzIPgPt4qFtXtRhQIkrifsTjWOUqCR/RAxSdxZfVkuAsb6YlyAYymuaJRtGzxrfBdnkOS6JdiYH8R4YZvFhMxgxH9dgg+I19M1GRRwVco0KBNOIDrZbgLtj292r7PUjngPOUvacn/iscGAkjaRByJT7tq/dq/apOJ4dsMO5CvrrV3iwN6qy4E3O5qxcvsCEmppI5du4xDs1dSvgehXRQUwTqp5fOv24SM50R+1+aHwWs/QnDxzt4MrO0MMhY19fmSOl9w8+U0vNmfh5ZWoLkfW79loM5a7fQ=
+    on:
+      branch: master
+    tag: next
+
+notifications:
+  email:
+    recipients:
+      - donaldaverill@gmail.com
+    on_success: change
+    on_failure: always
