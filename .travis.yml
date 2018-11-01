@@ -19,7 +19,7 @@ deploy:
     tag: next
   - provider: script
     skip_cleanup: true
-    script: .travis/pu.sh
+    script: bash pu.sh
     on:
       branch: master
     tags: false
