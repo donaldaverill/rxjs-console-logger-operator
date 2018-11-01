@@ -25,7 +25,7 @@ make_version() {
 
   # Run the deploy build and increment the package versions
   # %s is the placeholder for the created tag
-  npm version patch -m "chore: release version %s"
+  npm version patch -m "chore: release version %s [skip ci]"
 }
 
 upload_files() {
