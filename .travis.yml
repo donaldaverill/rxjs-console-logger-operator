@@ -15,7 +15,7 @@ deploy:
     script: bash pu.sh
     on:
       branch: master
-    tags: false
+      tags: false
   - provider: npm
     email: donaldaverill@gmail.com
     api_key:
