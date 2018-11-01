@@ -28,7 +28,7 @@
   },
   "homepage": "https://github.com/donaldaverill/rxjs-console-logger-operator#readme",
   "devDependencies": {
-    "@types/chai": "^4.1.6",
+    "@types/chai": "^4.1.7",
     "@types/mocha": "^5.2.5",
     "@types/sinon": "^5.0.5",
     "chai": "^4.2.0",
