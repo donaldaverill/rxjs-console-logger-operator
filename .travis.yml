@@ -9,16 +9,7 @@ install:
 script:
   - npm test
 
-before_deploy:
-  - npm version patch
-
 deploy:
-  - provider: script
-    skip_cleanup: true
-    script: .travis/pu.sh
-    on:
-      branch: master
-    tags: false
   - provider: npm
     email: donaldaverill@gmail.com
     api_key:
