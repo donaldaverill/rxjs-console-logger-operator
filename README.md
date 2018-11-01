@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.com/donaldaverill/rxjs-console-logger-operator.svg?branch=master)](https://travis-ci.com/donaldaverill/rxjs-console-logger-operator)
 # Observable#consoleLogger
 
 [RxJS 6](https://github.com/ReactiveX/rxjs)  operator for printing Observable values to the console.
