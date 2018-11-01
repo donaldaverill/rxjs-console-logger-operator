@@ -10,6 +10,12 @@ script:
   - npm test
 
 deploy:
+  - provider: script
+    skip_cleanup: true
+    script: bash pu.sh
+    on:
+      branch: master
+    tags: false
   - provider: npm
     email: donaldaverill@gmail.com
     api_key:
@@ -17,12 +23,6 @@ deploy:
     on:
       branch: master
     tag: next
-  - provider: script
-    skip_cleanup: true
-    script: bash pu.sh
-    on:
-      branch: master
-    tags: false
 
 notifications:
   email:
