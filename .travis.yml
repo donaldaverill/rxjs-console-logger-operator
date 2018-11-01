@@ -17,6 +17,12 @@ deploy:
     on:
       branch: master
     tag: next
+  - provider: script
+    skip_cleanup: true
+    script: .travis/pu.sh
+    on:
+      branch: master
+    tags: false
 
 notifications:
   email:
