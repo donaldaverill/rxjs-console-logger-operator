@@ -27,7 +27,7 @@ jobs:
           version: 12
           registry-url: https://registry.npmjs.org/
       - run: npm publish
-        if: github.event_name == 'push' && github.ref == refs/heads/master
+        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
         env:
           NODE_AUTH_TOKEN: ${{secrets.npm_token}}
 
