@@ -1,13 +1,12 @@
-[![Build Status](https://travis-ci.com/donaldaverill/rxjs-console-logger-operator.svg?branch=master)](https://travis-ci.com/donaldaverill/rxjs-console-logger-operator)
 # Observable#consoleLogger
 
-[RxJS 6](https://github.com/ReactiveX/rxjs)  operator for printing Observable values to the console.
+[RxJS 6](https://github.com/ReactiveX/rxjs) operator for printing Observable values to the console.
 
 ```ts
 import { of } from 'rxjs'
 import { debug /* OR consoleLogger */ } from 'rxjs-console-logger'
 
-of([1, 2, 3, 4]).pipe(debug('printMe')) 
+of([1, 2, 3, 4]).pipe(debug('printMe'))
 ```
 
 <img src="printMe.png" width="500px">
