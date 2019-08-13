@@ -1,6 +1,6 @@
 {
   "name": "rxjs-console-logger",
-  "version": "6.3.27",
+  "version": "6.3.28",
   "description": "RxJS operator for printing Observable values to the console.",
   "main": "console-logger.js",
   "typings": "console-logger.d.ts",
