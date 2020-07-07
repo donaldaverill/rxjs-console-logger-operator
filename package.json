@@ -1,6 +1,6 @@
 {
   "name": "rxjs-console-logger",
-  "version": "6.5.5",
+  "version": "6.6.0",
   "description": "RxJS operator for printing Observable values to the console.",
   "main": "console-logger.js",
   "typings": "console-logger.d.ts",
@@ -28,16 +28,16 @@
   },
   "homepage": "https://github.com/donaldaverill/rxjs-console-logger-operator#readme",
   "dependencies": {
-    "rxjs": "^6.5.5"
+    "rxjs": "^6.6.0"
   },
   "devDependencies": {
     "@types/chai": "^4.2.11",
     "@types/mocha": "^7.0.2",
     "chai": "^4.2.0",
-    "mocha": "^7.1.1",
+    "mocha": "^8.0.1",
     "sinon": "^9.0.2",
-    "ts-node": "^8.9.0",
-    "tslint": "^6.1.1",
-    "typescript": "^3.8.3"
+    "ts-node": "^8.10.2",
+    "tslint": "^6.1.2",
+    "typescript": "^3.9.6"
   }
 }
