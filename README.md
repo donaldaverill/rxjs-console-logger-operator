@@ -9,4 +9,6 @@ import { debug /* OR consoleLogger */ } from 'rxjs-console-logger'
 of([1, 2, 3, 4]).pipe(debug('printMe'))
 ```
 
-<img src="printMe.png" width="500px">
+<img src="printMe.png" width="500px"
+
+>
