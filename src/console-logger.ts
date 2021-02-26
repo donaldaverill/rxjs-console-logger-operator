@@ -1,7 +1,7 @@
-import { Observable } from 'rxjs'
+import { Observable, Subscriber } from 'rxjs'
 
 export const consoleLogger = (message: string) => <T>(source: Observable<T>) =>
-  new Observable<T>((observer) =>
+  new Observable<T>((observer: Subscriber<T>) =>
     source.subscribe({
       next(next) {
         console.group(message)
@@ -16,8 +16,8 @@ export const consoleLogger = (message: string) => <T>(source: Observable<T>) =>
       complete() {
         console.log(message.concat(' Completed.'))
         observer.complete()
-      },
-    }),
+      }
+    })
   )
 
 export const debug = consoleLogger
