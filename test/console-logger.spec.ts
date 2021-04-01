@@ -12,8 +12,7 @@ describe('debug', () => {
   let logStub: SinonStub
 
   beforeEach(() => {
-    scheduler = new TestScheduler((actual, expected) =>
-      void expect(actual).to.deep.equal(expected))
+    scheduler = new TestScheduler((actual, expected) => void expect(actual).to.deep.equal(expected))
   })
 
   beforeEach(() => {
