@@ -1,6 +1,6 @@
 # Observable#consoleLogger
 
-[RxJS 6](https://github.com/ReactiveX/rxjs) operator for printing Observable values to the console.
+[RxJS 7](https://github.com/ReactiveX/rxjs) operator for printing Observable values to the console.
 
 ```ts
 import { of } from 'rxjs'

@@ -16,8 +16,8 @@ export const consoleLogger = (message: string) => <T>(source: Observable<T>) =>
       complete() {
         console.log(message.concat(' Completed.'))
         observer.complete()
-      },
-    }),
+      }
+    })
   )
 
 export const debug = consoleLogger
