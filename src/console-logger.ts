@@ -19,3 +19,5 @@ export const consoleLogger = (message: string) => <T>(source: Observable<T>) =>
       }
     })
   )
+
+export const debug = consoleLogger
