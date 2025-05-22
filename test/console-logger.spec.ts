@@ -10,6 +10,8 @@ describe('debug', () => {
 
   let errorStub: SinonStub
   let logStub: SinonStub
+  let groupStub: SinonStub
+  let groupEndStub: SinonStub
 
   beforeEach(() => {
     scheduler = new TestScheduler((actual, expected) => void expect(actual).to.deep.equal(expected))
@@ -20,6 +22,8 @@ describe('debug', () => {
 
     errorStub = sb.stub(console, 'error')
     logStub = sb.stub(console, 'log')
+    groupStub = sb.stub(console, 'group')
+    groupEndStub = sb.stub(console, 'groupEnd')
   })
 
   afterEach(() => {
@@ -35,8 +39,10 @@ describe('debug', () => {
     scheduler.expectObservable(source.pipe(debug(message))).toBe(expected)
     scheduler.flush()
     assert.notCalled(errorStub)
-    assert.callCount(logStub, 3)
-    assert.calledWith(logStub, message)
+    assert.callCount(logStub, 2)
     assert.calledWith(logStub, message.concat(' Completed.'))
+    assert.calledOnce(groupStub)
+    assert.calledWith(groupStub, message)
+    assert.calledOnce(groupEndStub)
   })
 })
